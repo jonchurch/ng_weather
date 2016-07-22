@@ -11,16 +11,17 @@
 		function RouteConfig($routeProvider, $locationProvider) {
 			$routeProvider //defining the url routes, and the html that is brought into index.html
 			.when('/', {
-				template: 'home'
+				templateUrl: 'html/views/home.html',
+				controller: 'HomeController'
 			})
 			.when('/hourly', {
-				template: 'hourly'
+				templateUrl: '/html/views/hourly.html'
 			})
 			.when('/minutely', {
-				template: 'minutely'
+				templateUrl: '/html/views/minutely.html'
 			})
 			.when('/daily', {
-				template: 'daily'
+				templateUrl: '/html/views/daily.html'
 			})
 			.otherwise({
 				redirectTo: '/'
