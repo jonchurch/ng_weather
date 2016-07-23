@@ -1,5 +1,6 @@
 {
-  "name": "ng-weather",
+
+  "name": "ng_weather",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,5 +14,7 @@
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
     "express": "^4.14.0"
-  }
+  },
+  "author": "Jon Church",
+  "license": "ISC"
 }
