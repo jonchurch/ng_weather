@@ -23,9 +23,11 @@
 
     function getHourlyData(lat, lon){
       var url = baseUrl + 'forecast/hourly/'+ lat + ',' + lon;
+      console.log('Hourly Ran!');
       return $http.get(url, config)
                   .then(function(response){
                     service.weather = response.data;
+                    console.log(service.weather);
                   });
     }
 
