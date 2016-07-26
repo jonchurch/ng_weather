@@ -13,9 +13,13 @@
             WeatherService.getHourlyData(lat, lon);
         }
 
-        function updateMinutely(lat, lon) {}
+        function updateMinutely(lat, lon) {
+            WeatherService.getMinutelyData(lat,lon);
+        }
 
-        function updateDaily(lat, long) {}
+        function updateDaily(lat, lon) {
+            WeatherService.getDailyData(lat, lon);
+        }
     }
 
 

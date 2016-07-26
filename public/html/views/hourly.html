@@ -1,1 +1,37 @@
-<h1>Hourly</h1>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h3>Latitude: {{ hourlyData.latitude  }}, Longitude: {{  hourlyData.longitude }}
+			</h3>
+        </div>
+    </div>
+    <div class="row" ng-repeat="card in hourlyData.hourly.data">
+        <div class="col-sm-6 col-sm-offset-3 well">
+            <div class="row">
+                <div class="col-sm-4">
+                    {{card.summary}}
+                </div>
+                <div class="col-sm-4">
+                    {{card.temperature}}
+                </div>
+                <div class="col-sm-4">
+                    {{card.time}}
+                </div>
+            </div>
+            <div class="row">
+                {{card.precipProbability}}
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    {{card.humidity}}
+                </div>
+                <div class="col-sm-6">
+                    {{card.summary}}
+                </div>
+            </div>
+            <div class="row">
+            	{{card.windSpeed}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,7 +15,8 @@
 				controller: 'HomeController'
 			})
 			.when('/hourly', {
-				templateUrl: '/html/views/hourly.html'
+				templateUrl: '/html/views/hourly.html',
+				controller: 'HourlyController'
 			})
 			.when('/minutely', {
 				templateUrl: '/html/views/minutely.html'
