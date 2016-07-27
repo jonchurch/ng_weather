@@ -9,7 +9,7 @@
         $scope.summaryLookup = {
             'Drizzle': 'There will be a drizzle',
             'Parly Cloudy': 'Parly cloudy skies'
-        }
+        };
         $scope.$watch(function(){
             return WeatherService.weather;
         }, function(value){
