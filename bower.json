@@ -1,0 +1,21 @@
+{
+  "name": "ng_weather",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jon Church"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jonchurch/ng_weather",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-reverse-geocode": "*"
+  }
+}
