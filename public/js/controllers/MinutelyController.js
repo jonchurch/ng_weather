@@ -2,7 +2,7 @@
     angular.module('ngWeather')
         .controller('MinutelyController', MinutelyController);
 
-    MinutelyController.$inject = ['$scope', 'WeatherService', 'nvd3'];
+    MinutelyController.$inject = ['$scope', 'WeatherService'];
 
     function MinutelyController($scope, WeatherService) {
         $scope.minutelyData = WeatherService.weather;
@@ -14,11 +14,7 @@
             $scope.data = minutelyGraph($scope.minutelyData);
         });
 
-<<<<<<< Updated upstream
-
-=======
     
->>>>>>> Stashed changes
         $scope.options = {
             chart: {
                 type: 'lineChart',
@@ -74,11 +70,6 @@
             }
         };
 
-<<<<<<< Updated upstream
-        function minutelygraph(weather) {
-            var precipProbValues = [];
-            var precipIntValues = [];
-=======
         function minutelyGraph(weather) {
             if (isObjectEmpty(weather)) {
                 console.log('no data yet for minutelyGraph!');
@@ -87,7 +78,6 @@
                 var precipIntValues = [];
                 var precipProbValues= [];
                 console.log(weather);
->>>>>>> Stashed changes
 
 
                 for (var i = 0; i < weather.minutely.data.length; i += 1) {
@@ -106,8 +96,6 @@
 
 
         }
-<<<<<<< Updated upstream
-=======
 
         function isObjectEmpty(object) {
             for (var key in object) {
@@ -117,7 +105,6 @@
             }
             return true;
         }
->>>>>>> Stashed changes
 
     }
 })();
