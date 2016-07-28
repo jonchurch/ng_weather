@@ -19,10 +19,12 @@
 				controller: 'HourlyController'
 			})
 			.when('/minutely', {
-				templateUrl: '/html/views/minutely.html'
+				templateUrl: '/html/views/minutely.html',
+				controller: 'MinutelyController'
 			})
 			.when('/daily', {
-				templateUrl: '/html/views/daily.html'
+				templateUrl: '/html/views/daily.html',
+				// controller: 'DailyController'
 			})
 			.otherwise({
 				redirectTo: '/'

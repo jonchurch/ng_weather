@@ -2,7 +2,7 @@
     angular.module('ngWeather')
         .controller('MinutelyController', MinutelyController);
 
-    MinutelyController.$inject = ['$scope', 'WeatherService', 'nvd3'];
+    MinutelyController.$inject = ['$scope', 'WeatherService'];
 
     function MinutelyController($scope, WeatherService) {
         $scope.minutelyData = WeatherService.weather;
@@ -13,7 +13,7 @@
             console.log(value);
         });
 
-
+    /*
         $scope.options = {
             chart: {
                 type: 'lineChart',
@@ -70,7 +70,7 @@
         };
         $scope.data = minutelyGraph(WeatherService.weather.minutely.data);
 
-        function minutelygraph(weather) {
+        function minutelyGraph(weather) {
             var precipProbValues = [];
             var precipIntValues = [];
 
@@ -87,7 +87,7 @@
                 key: 'Precip Intensity'
             }];
 
-        }
+        }*/
 
     }
 })();

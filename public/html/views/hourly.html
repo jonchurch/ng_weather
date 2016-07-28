@@ -1,37 +1,47 @@
 <div class="container">
+<div class="row">
+    <div class="sm-col-12">
+    <div class="well m-20-0-0-0">
+        <nvd3 options="options" data="data"></nvd3>
+        </div>
+    </div>
+</div>
     <div class="row text-center">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-12">
             <h3>Latitude: {{ hourlyData.latitude  }}, Longitude: {{  hourlyData.longitude }}
 			</h3>
         </div>
     </div>
     <div class="row" ng-repeat="card in hourlyData.hourly.data">
-        <div class="col-sm-6 col-sm-offset-3 well">
-            <div class="row">
-                <div class="col-sm-4">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-12 well">
+            <div class="row" text-center>
+                <div class="col-sm-4 col-xs-12">
                     <img class="img-responsive" alt="{{card.icon}} icon" ng-src="img/{{card.icon}}.png" style="max-width:100px">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-12">
                     <h3>Temp: {{card.temperature}}&deg;F</h3>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-12">
                    <h4> {{card.time * 1000 | date: 'short' }}</h4>
                 </div>
             </div>
             <div class="row">
-               <h5>Precipitation Probability: {{card.precipProbability * 100 | number:0 }}%</h5>
-            </div>
-            <div class="row">
-                <div class="col-sm-6"><!-- can use | number instead of 0 -->
+            <div class="col-sm-5 col-xs-12">
+            
+               <h5>Precip Prob: {{card.precipProbability * 100 | number:0 }}%</h5>
+            
+                <!-- can use | number instead of 0 -->
                     <h5>Humidity: {{card.humidity * 100 | number:0 }}%</h5>
-                </div>
-                <div class="col-sm-6">
+                
+                
+                <h5 >Wind Speed: {{card.windSpeed}} mph</h5>
+
+</div>
+                <div class="col-sm-7 col-xs-12">
+            
                     <h3>{{ summaryLookup[card.summary] || card.summary}}</h3>
                 </div>
-            </div>
-            <div class="row">
-            	<h5>Wind Speed: {{card.windSpeed}} mph</h5>
-            </div>
+                
         </div>
     </div>
 </div>
