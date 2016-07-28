@@ -11,9 +11,14 @@
         }, function(value) {
             $scope.minutelyData = value;
             console.log(value);
+            $scope.data = minutelyGraph($scope.minutelyData);
         });
 
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
         $scope.options = {
             chart: {
                 type: 'lineChart',
@@ -68,26 +73,51 @@
 
             }
         };
-        $scope.data = minutelyGraph(WeatherService.weather.minutely.data);
 
+<<<<<<< Updated upstream
         function minutelygraph(weather) {
             var precipProbValues = [];
             var precipIntValues = [];
+=======
+        function minutelyGraph(weather) {
+            if (isObjectEmpty(weather)) {
+                console.log('no data yet for minutelyGraph!');
+                return;
+            } else {
+                var precipIntValues = [];
+                var precipProbValues= [];
+                console.log(weather);
+>>>>>>> Stashed changes
 
-            for (var i = 0; i < weather.length; i += 1) {
-                precipProbValues.push({ x: i, y: (weather[i].precipProbability * 100).toFixed() });
-                precipIntValues.push({ x: i, y: (weather[i].precipIntensity).toFixed() });
+
+                for (var i = 0; i < weather.minutely.data.length; i += 1) {
+                    precipProbValues.push({ x: i, y: weather.minutely.data[i].precipProbability.toFixed() });
+                    precipIntValues.push({ x: i, y: weather.minutely.data[i].precipIntensity.toFixed() });
+                }
+                return [{
+                    key: 'Precip Probability',
+                    values: precipProbValues
+                }],
+                [{
+                    key: 'Precip Intensity',
+                    values: precipIntValues
+                }];
             }
 
-            return [{
-                value: precipProbValues,
-                key: 'Chance of precip'
-            }, {
-                value: precipIntValues,
-                key: 'Precip Intensity'
-            }];
 
         }
+<<<<<<< Updated upstream
+=======
+
+        function isObjectEmpty(object) {
+            for (var key in object) {
+                if (object.hasOwnProperty(key)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+>>>>>>> Stashed changes
 
     }
 })();
