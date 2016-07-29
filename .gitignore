@@ -2,4 +2,4 @@ node_modules
 .env
 config.js
 *.log
-bower_components
+public/js/bower_components
