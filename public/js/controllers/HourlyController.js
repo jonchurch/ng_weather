@@ -15,7 +15,10 @@
         }, function(value) {
             $scope.hourlyData = value;
             $scope.data = hourlyGraph($scope.hourlyData);
+
         });
+
+
 
         $scope.options = {
             chart: {
@@ -58,19 +61,12 @@
                 enable: true,
                 text: 'Temp'
             },
-            subtitle: {
-                enable: true,
-                text: 'Subtitle for simple line chart. Lorem ipsum dolor sit amet, at eam blandit sadipscing, vim adhuc sanctus disputando ex, cu usu affert alienum urbanitas.',
-                css: {
-                    'text-align': 'center',
-                    'margin': '10px 13px 0px 7px'
-                }
-            },
             caption: {
                 enable: false,
 
             }
         };
+            $scope.options.chart.forceY = [0, 100];
         // Removed this because when the function first runs, there is no data to assign, we are assigning an empty object, moved to the watch function
         // 
         // $scope.data = hourlyGraph($scope.hourlyData);

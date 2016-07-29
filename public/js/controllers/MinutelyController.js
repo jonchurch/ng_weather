@@ -18,13 +18,15 @@
         $scope.options = {
             chart: {
                 type: 'lineChart',
-                height: 450,
+                height: 250,
+                forceY: [0,1],
                 margin: {
                     top: 20,
                     right: 20,
                     bottom: 40,
                     left: 55
                 },
+                interpolate: 'basis',
                 x: function(d) {
                     return d.x;
                 },
@@ -39,14 +41,13 @@
                     tooltipHide: function(e) { console.log("tooltipHide"); }
                 },
                 xAxis: {
-                    axisLabel: 'Time (ms)'
+                    axisLabel: 'The next Hour'
                 },
                 yAxis: {
-                    axisLabel: 'Voltage (v)',
-                    tickFormat: function(d) {
-                        return d3.format('.02f')(d);
-                    },
-                    axisLabelDistance: -10
+                    axisLabel: 'Precipitation',
+                    axisLabelDistance: -10,
+                    ticks: [4] 
+                    // ticks: ,
                 },
                 callback: function(chart) {
                     console.log("!!! lineChart callback !!!");
@@ -54,18 +55,14 @@
             },
             title: {
                 enable: true,
-                text: 'Title for Line Chart'
+                text: 'Precipitation Chance'
             },
             subtitle: {
-                enable: true,
-                text: 'Subtitle for simple line chart. Lorem ipsum dolor sit amet, at eam blandit sadipscing, vim adhuc sanctus disputando ex, cu usu affert alienum urbanitas.',
-                css: {
-                    'text-align': 'center',
-                    'margin': '10px 13px 0px 7px'
-                }
+                enable: false
+        
             },
             caption: {
-                enable: false,
+                enable: false
 
             }
         };
@@ -81,8 +78,8 @@
 
 
                 for (var i = 0; i < weather.minutely.data.length; i += 1) {
-                    precipProbValues.push({ x: i, y: weather.minutely.data[i].precipProbability.toFixed() });
-                    precipIntValues.push({ x: i, y: weather.minutely.data[i].precipIntensity.toFixed() });
+                    precipProbValues.push({ x: i, y: weather.minutely.data[i].precipProbability.toFixed(2) });
+                    precipIntValues.push({ x: i, y: weather.minutely.data[i].precipIntensity.toFixed(2) });
                 }
                 return [{
                     key: 'Precip Probability',
