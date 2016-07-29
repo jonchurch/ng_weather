@@ -1,4 +1,4 @@
 
 angular.module('ngWeather', [
-	'ngRoute', 'nvd3'
+	'ngRoute', 'nvd3', 'angularReverseGeocode'
 	]);
