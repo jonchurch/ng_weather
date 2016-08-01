@@ -30,6 +30,7 @@
                     bottom: 40,
                     left: 55
                 },
+                interpolate: 'basis',
                 x: function(d) {
                     return d.x;
                 },
